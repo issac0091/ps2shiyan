@@ -15,26 +15,30 @@ basic.forever(function () {
     OLED.clear()
 })
 basic.forever(function () {
-    if (p0 <= 20 && (p1 > 500 && p1 <= 600)) {
-        basic.showString("UP!")
-    } else if (p0 > 950 && (p1 > 500 && p1 <= 600)) {
-        basic.showString("down!")
-    } else if (p0 > 300 && p0 <= 400 && p1 >= 1000) {
-        basic.showString("Left")
-    } else if (p0 > 350 && p0 <= 400 && p1 <= 20) {
+    if (p0 < 20) {
+        if (p1 >= 950) {
+            basic.showString("UL")
+        } else if (p1 <= 20) {
+            basic.showString("UR")
+        } else {
+            basic.showString("UP")
+        }
+    } else if (p0 >= 800) {
+        if (p1 >= 950) {
+            basic.showString("DL")
+        } else if (p1 <= 20) {
+            basic.showString("DR")
+        } else {
+            basic.showString("Down")
+        }
+    } else if (p1 <= 20) {
         basic.showString("Right")
-    } else if (p3 <= 80) {
-        basic.showString("Pressed!")
-    } else if (p0 <= 20 && p1 >= 1000) {
-        basic.showString("UL!")
-    } else if (p0 <= 20 && p1 <= 20) {
-        basic.showString("UR!")
-    } else if (p1 >= 1000 && p0 >= 950) {
-        basic.showString("DL!")
-    } else if (p0 >= 950 && p1 <= 20) {
-        basic.showString("DR!")
+    } else if (p1 >= 950) {
+        basic.showString("Left")
+    } else if (p3 < 111) {
+        basic.showString("Pressed")
     } else {
-        basic.showString("Home!")
+        basic.showString("Home")
     }
 })
 basic.forever(function () {

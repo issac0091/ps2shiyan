@@ -8,13 +8,13 @@ basic.forever(function () {
     p1 = pins.analogReadPin(AnalogReadWritePin.P1)
 })
 basic.forever(function () {
-    if (p0 <= 20) {
+    if (p0 <= 20 && p1 <= 600) {
         basic.showString("UP!")
-    } else if (p0 >= 900) {
+    } else if (p0 > 950 && p1 < 600) {
         basic.showString("down!")
-    } else if (p1 >= 1000) {
+    } else if (p0 <= 400 && p1 >= 1000) {
         basic.showString("Left")
-    } else if (p1 <= 20) {
+    } else if (p0 <= 400 && p1 <= 20) {
         basic.showString("Right")
     } else if (p3 <= 80) {
         basic.showString("Pressed!")

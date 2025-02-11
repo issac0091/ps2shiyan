@@ -1,0 +1,22 @@
+OLED.init(128, 64)
+basic.forever(function () {
+    OLED.writeString("P0:")
+    OLED.writeNum(pins.analogReadPin(AnalogPin.P0))
+    OLED.writeString(" ")
+    basic.pause(2000)
+    OLED.clear()
+})
+basic.forever(function () {
+    OLED.writeString("P1:")
+    OLED.writeNum(pins.analogReadPin(AnalogReadWritePin.P1))
+    OLED.writeString(" ")
+    basic.pause(2000)
+    OLED.clear()
+})
+basic.forever(function () {
+    OLED.writeString("P3:")
+    OLED.writeNum(pins.analogReadPin(AnalogReadWritePin.P3))
+    OLED.writeString(" ")
+    basic.pause(2000)
+    OLED.clear()
+})

@@ -8,6 +8,13 @@ basic.forever(function () {
     p1 = pins.analogReadPin(AnalogReadWritePin.P1)
 })
 basic.forever(function () {
+    OLED.writeString("P0:")
+    OLED.writeNum(pins.analogReadPin(AnalogPin.P0))
+    OLED.writeString(" ")
+    basic.pause(1000)
+    OLED.clear()
+})
+basic.forever(function () {
     if (p0 <= 20 && (p1 > 500 && p1 <= 600)) {
         basic.showString("UP!")
     } else if (p0 > 950 && (p1 > 500 && p1 <= 600)) {
@@ -29,13 +36,6 @@ basic.forever(function () {
     } else {
         basic.showString("Home!")
     }
-})
-basic.forever(function () {
-    OLED.writeString("P0:")
-    OLED.writeNum(pins.analogReadPin(AnalogPin.P0))
-    OLED.writeString(" ")
-    basic.pause(1000)
-    OLED.clear()
 })
 basic.forever(function () {
     OLED.writeString("P1:")

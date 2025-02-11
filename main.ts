@@ -18,6 +18,14 @@ basic.forever(function () {
         basic.showString("Right")
     } else if (p3 <= 80) {
         basic.showString("Pressed!")
+    } else if (p0 <= 20 && p1 >= 1000) {
+        basic.showString("UL!")
+    } else if (p0 <= 20 && p1 <= 20) {
+        basic.showString("UR!")
+    } else if (p1 >= 1000 && p0 >= 950) {
+        basic.showString("DL!")
+    } else if (p0 >= 950 && p1 <= 20) {
+        basic.showString("DR!")
     } else {
         basic.showString("Home!")
     }

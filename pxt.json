@@ -1,6 +1,6 @@
 {
     "name": "PS2操纵杆实验",
-    "version": "1.0.0",
+    "version": "2.0.0",
     "description": "",
     "dependencies": {
         "core": "*",

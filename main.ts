@@ -8,9 +8,9 @@ basic.forever(function () {
     p1 = pins.analogReadPin(AnalogReadWritePin.P1)
 })
 basic.forever(function () {
-    if (p0 <= 20 && p1 <= 600) {
+    if (p0 <= 20 && (p1 > 500 && p1 <= 600)) {
         basic.showString("UP!")
-    } else if (p0 > 950 && p1 < 600) {
+    } else if (p0 > 950 && (p1 > 500 && p1 <= 600)) {
         basic.showString("down!")
     } else if (p0 <= 400 && p1 >= 1000) {
         basic.showString("Left")
